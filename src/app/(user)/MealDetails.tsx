@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
-import { StyleSheet, Text, View, Pressable, Image, Platform } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Image, Platform, ScrollView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import Colors from '@/src/constants/Colors';
 
@@ -21,6 +21,7 @@ export default function MealDetailsScreen() {
           {/* Horizontal Divider */}
           <View style={styles.divider} />
 
+         
           {/* Meal Image Section */}
           <View style={styles.imageContainer}>
             <Image 
@@ -28,9 +29,9 @@ export default function MealDetailsScreen() {
               style={styles.mealImage} 
             />
           </View>
-
           {/* Meal Information Section */}
           <View style={styles.infoContainer}>
+            
             <Text style={styles.label}>Meal Name</Text>
             <Text style={styles.value}>Place here</Text>
 
@@ -47,8 +48,9 @@ export default function MealDetailsScreen() {
             <Text style={styles.value}>##</Text>
 
             <Text style={styles.totalLabel}>Total Meals in Inventory</Text>
-            <Text style={styles.totalValue}>##</Text>
+            <Text style={styles.totalValue}>##</Text>            
           </View>
+          
 
           {/* Edit Button */}
           <Pressable style={styles.editButton} onPress={() => {}}>
@@ -142,7 +144,7 @@ const styles = StyleSheet.create({
   },
   editButton: {
     position: 'absolute',
-    bottom: Platform.OS === 'android' ? 30 : 50,
+    bottom: Platform.OS === 'android' ? 30 : 'auto',
     left: '10%',
     right: '10%',
     backgroundColor: Colors.mainBottomButton,
